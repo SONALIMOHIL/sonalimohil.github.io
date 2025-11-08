@@ -1,27 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>My Personal Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Mountain Journey</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #e3f2fd, #fff);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: relative;
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    p.quote {
+      font-style: italic;
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      color: white;
+      background: #0077b6;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .buttons a:hover {
+      background: #48cae4;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      p.quote {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hi, I'm [SONALI MOHIL] 👋</h1>
-  <p>Welcome to my website where I share my vlogs, book reviews, and photos.</p>
+  <header>
+    <div class="content">
+      <h1>Mountains Are Calling</h1>
+      <p class="quote">“The best view comes after the hardest climb.”</p>
+      <div class="buttons">
+        <a href="https://www.youtube.com/@YOURCHANNEL" target="_blank">Watch My Vlogs</a>
+      </div>
+    </div>
+  </header>
 
-  <h2>My Latest Vlog</h2>
-  <p>Coming soon!</p>
-
-  <h2>My Book Reviews</h2>
-  <ul>
-    <li><strong>Book 1:</strong> Review coming soon!</li>
-    <li><strong>Book 2:</strong> Review coming soon!</li>
-  </ul>
-
-  <h2>My Photos</h2>
-  <img src="https://via.placeholder.com/200" alt="photo 1" />
-  <img src="https://via.placeholder.com/200" alt="photo 2" />
-
-  <p>Contact me at: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+  <footer>
+    © 2025 My Mountain Journey | Designed by Me 🌿
+  </footer>
 </body>
 </html>
