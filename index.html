@@ -3,216 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sonali Mohil | My Mountain Journey</title>
-
-  <!-- Google Fonts -->
+  <title>Sonali Mohil | Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-
   <style>
-    /* ---------- BASIC RESET ---------- */
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom, #e3f2fd, #fff);
-      color: #333;
-      line-height: 1.6;
-    }
-
-    /* ---------- NAVBAR ---------- */
-    nav {
-      background: #004b87;
-      padding: 15px;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-
-    nav a:hover {
-      color: #90e0ef;
-    }
-
-    /* ---------- HEADER SECTION ---------- */
-    header {
-      height: 100vh;
-      background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      position: relative;
-      text-align: center;
-      padding: 0 20px;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.4);
-    }
-
-    header .text {
-      position: relative;
-      z-index: 2;
-    }
-
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    }
-
-    p.quote {
-      font-style: italic;
-      font-size: 1.3rem;
-      opacity: 0.9;
-    }
-
-    /* ---------- SECTIONS ---------- */
-    section {
-      padding: 80px 20px;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: #004b87;
-      margin-bottom: 20px;
-    }
-
-    section p, section ul {
-      font-size: 1.1rem;
-      color: #444;
-    }
-
-    /* ---------- PHOTO GALLERY ---------- */
-    .gallery img {
-      width: 220px;
-      border-radius: 10px;
-      margin: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    /* ---------- CONTACT SECTION ---------- */
-    .contact a {
-      color: #004b87;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #90e0ef;
-      text-decoration: none;
-    }
-
-    /* ---------- MEDIA ---------- */
-    @media (max-width: 768px) {
-      h1 { font-size: 2.2rem; }
-      p.quote { font-size: 1.1rem; }
-    }
+    body { margin:0; font-family:'Poppins',sans-serif; background:#f5f9ff; color:#333; text-align:center; }
+    nav { background:#004b87; padding:15px; }
+    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:500; }
+    nav a:hover { color:#90e0ef; }
+    header { background:url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white; }
+    header h1 { font-family:'Playfair Display',serif; font-size:3rem; text-shadow:0 3px 6px rgba(0,0,0,0.5); }
+    header p { font-style:italic; font-size:1.3rem; }
+    footer { background:#222; color:white; padding:20px; }
   </style>
 </head>
-
 <body>
-  <!-- NAVIGATION -->
   <nav>
-    <a href="#home">Home</a>
-    <a href="#blogs">Blogs</a>
-    <a href="#books">Books</a>
-    <a href="#photos">Photos</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="blogs.html">Blogs</a>
+    <a href="books.html">Books</a>
+    <a href="photos.html">Photos</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- HEADER -->
-  <header id="home">
-    <div class="text">
-      <h1>Mountains Are Calling 🌄</h1>
-      <p class="quote">“The best view comes after the hardest climb.”</p>
-    </div>
+  <header>
+    <h1>Mountains Are Calling 🌄</h1>
+    <p>“The best view comes after the hardest climb.”</p>
   </header>
 
-  <!-- ABOUT SECTION -->
-  <section id="about">
-    <h2>Hi, I'm <strong>Sonali Mohil</strong> 👋</h2>
-    <p>Welcome to my personal website — a cozy space where I share my travel experiences, mountain memories, and life reflections.  
-    I write, read, and capture the small wonders of the world around me. 🌿</p>
-  </section>
-
-  <!-- BLOGS SECTION -->
-  <section id="blogs">
-    <h2>My Blogs ✍️</h2>
-    <article>
-      <h3>Finding Peace in the Mountains</h3>
-      <p>Coming soon... reflections on my first solo trek and how it changed me.</p>
-    </article>
-    <article>
-      <h3>Morning Coffee & Mindfulness</h3>
-      <p>A calm morning ritual that helps me stay centered in a noisy world.</p>
-    </article>
-  </section>
-
-  <!-- BOOKS SECTION -->
-  <section id="books">
-    <h2>Book Reviews 📚</h2>
-    <ul style="list-style:none;">
-      <li><strong>Book 1:</strong> Review coming soon!</li>
-      <li><strong>Book 2:</strong> Review coming soon!</li>
-    </ul>
-  </section>
-
-  <!-- PHOTOS SECTION -->
-  <section id="photos">
-    <h2>My Photo Gallery 📸</h2>
-    <p>Some of my favorite mountain moments and travel memories.</p>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=400&q=80" alt="Mountain 1" />
-      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=400&q=80" alt="Mountain 2" />
-      <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=400&q=80" alt="Mountain 3" />
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="contact">
-    <h2>Contact Me 📬</h2>
-    <p>Got something to share or collaborate on? I’d love to hear from you!</p>
-    <p>Email: <a href="mailto:mohilsonali@gmail.com">mohilsonali@gmail.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/sanalimohil" target="_blank">@sanalimohil</a></p>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
-    © 2025 Sonali Mohil | Designed with 💙 and mountain love |
-    <a href="https://instagram.com/sanalimohil" target="_blank">@sanalimohil</a>
+    © 2025 Sonali Mohil | <a href="https://instagram.com/sanalimohil" style="color:#90e0ef;">@sanalimohil</a>
   </footer>
 </body>
 </html>
