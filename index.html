@@ -1,128 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sonali Mohil | Home</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap');
-
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      color: #2c2c2c;
-      background-color: #faf8f5;
-      text-align: center;
-      line-height: 1.6;
-    }
-
-    header {
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-      padding: 25px 0;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #2c2c2c;
-      margin: 0 20px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-      color: #b89b5e;
-    }
-
-    .hero {
-      background: url('pexels-errin-casano-2356045.jpeg') no-repeat center center/cover;
-      background-size: cover;
-      background-position: center;
-      height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      margin: 0;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-    }
-
-    section {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 15px;
-      color: #b89b5e;
-    }
-
-    footer {
-      background: #f0ede8;
-      padding: 25px;
-      font-size: 0.9rem;
-      color: #555;
-      border-top: 1px solid #ddd;
-    }
-
-    footer a {
-      color: #b89b5e;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vb Ch — Thoughts, Travels & Stories in Motion</title>
+  <meta name="description" content="Vb Ch — vlogs, longform writing, film & book analysis, and travel photography." />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="quotes.html">Quotes</a>
-      <a href="gallery.html">Gallery</a>
-    </nav>
+<body class="site-root">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Vb Ch</a>
+      <nav class="nav">
+        <a href="blog.html">Blog</a>
+        <a href="analysis.html">Movies & Books</a>
+        <a href="vlogs.html">Vlogs</a>
+        <a href="gallery.html">Travel</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="hero">
-    <h1>Sonali Mohil</h1>
-    <p>A quiet blend of elegance, thought, and nature.</p>
-  </div>
-
-  <section>
-    <h2>Welcome ✨</h2>
-    <p>
-      Hello, I’m <strong>Sonali Mohil</strong> — a thinker, a dreamer, and a lover of soft moments.
-      This space is my calm corner on the web — where thoughts meet stories, where silence feels like gold,
-      and where beauty hides in simplicity.
-    </p>
-    <p>
-      Wander through my <a href="quotes.html" style="color:#b89b5e;">quotes</a> and
-      <a href="gallery.html" style="color:#b89b5e;">gallery</a> — stay as long as you like.
-    </p>
+  <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2000&q=80');">
+    <div class="hero-overlay">
+      <div class="container hero-inner">
+        <h1 class="hero-title">Vb Ch</h1>
+        <p class="hero-sub">Thoughts, travels & stories in motion — vlogs, essays, and photo moments.</p>
+        <div class="hero-links">
+          <a class="btn primary" href="vlogs.html">Watch Vlogs</a>
+          <a class="btn ghost" href="analysis.html">Read Analyses</a>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>Contact: <a href="mailto:mohilsonali@gmail.com">mohilsonali@gmail.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/sanalimohil" target="_blank">@sanalimohil</a></p>
+  <main class="container main-grid">
+    <section class="feature">
+      <h2>Featured Essay</h2>
+      <article class="card">
+        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1200&q=80" alt="feature image">
+        <div class="card-body">
+          <h3>Why the Quiet Scenes Matter — A Film Deep Dive</h3>
+          <p class="muted">Nov 10, 2025 • Deep dive on pacing, silence and character work.</p>
+          <a class="read-more" href="analysis.html">Read full</a>
+        </div>
+      </article>
+    </section>
+
+    <aside class="side">
+      <div class="widget">
+        <h4>Latest Vlog</h4>
+        <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U" title="YouTube video" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <div class="widget">
+        <h4>About Me</h4>
+        <p class="muted">I write longform analyses on films & books, document travels, and vlog everyday discoveries.</p>
+        <a class="small-link" href="about.html">More about me →</a>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Vb Ch • Built with care.</p>
+      <div class="social">
+        <a href="#">YouTube</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
   </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
