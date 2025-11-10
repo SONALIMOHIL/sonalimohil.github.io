@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Movies & Books — Vb Ch</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Vb Ch</a>
+      <nav class="nav">
+        <a href="blog.html">Blog</a>
+        <a href="analysis.html">Movies & Books</a>
+        <a href="vlogs.html">Vlogs</a>
+        <a href="gallery.html">Travel</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container content">
+    <h1>Deep Dives — Films & Books</h1>
+    <p class="muted">Analytical essays, scene breakdowns, and reading reflections.</p>
+
+    <section class="analysis-grid">
+      <article class="analysis-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Fyodor_Dostoyevsky_1872.jpg" alt="Fyodor Dostoevsky">
+        <div>
+          <h3>Crime and Punishment</h3>
+          <p class="muted">“Pain and suffering are always inevitable for a large intelligence and a deep heart.” — Dostoevsky</p>
+          <a class="read-more" href="#">Read more →</a>
+        </div>
+      </article>
+
+      <article class="analysis-card">
+        <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&w=1200&q=80" alt="Interstellar scene">
+        <div>
+          <h3>Interstellar — The Poetry of Time</h3>
+          <p class="muted">“Love is the one thing we’re capable of perceiving that transcends dimensions of time and space.”</p>
+          <a class="read-more" href="#">Read more →</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year3"></span> Vb Ch</p>
+    </div>
+  </footer>
+  <script>document.getElementById('year3').textContent = new Date().getFullYear();</script>
+</body>
+</html>
