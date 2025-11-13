@@ -30,7 +30,7 @@
       <div class="hero-inner">
         <h1 class="hero-title">Stories. Thoughts. Journeys.</h1>
         <p class="hero-sub">Exploring worlds within and beyond — through words, films, and places.</p>
-        <a href="blog.html" class="btn primary">Read My Posts</a>
+        <a href="#posts" class="btn primary">Read My Posts</a>
         <a href="gallery.html" class="btn ghost">View Gallery</a>
       </div>
     </div>
@@ -71,6 +71,28 @@
     </section>
   </main>
 
+  <!-- Blog Section -->
+  <section id="blog-section" class="container">
+    <div id="loginSection">
+      <h3>Login (Admin Only)</h3>
+      <input type="email" id="loginEmail" placeholder="Email"><br>
+      <input type="password" id="loginPassword" placeholder="Password"><br>
+      <button onclick="firebaseLogin()">Login</button>
+    </div>
+
+    <div id="editorSection" style="display:none;">
+      <h3>Write a Blog Post</h3>
+      <input type="text" id="titleInput" placeholder="Blog Title"><br>
+      <textarea id="contentInput" placeholder="Write your content..." rows="5"></textarea><br>
+      <input type="file" id="imageInput"><br>
+      <button onclick="addPost()">Publish</button>
+      <button onclick="firebaseLogout()">Logout</button>
+    </div>
+
+    <hr>
+    <div id="posts"></div>
+  </section>
+
   <!-- Quote Banner -->
   <section class="quote-banner">
     “Subconscious marches to its own beat.” — Sonali Mohil
@@ -88,14 +110,112 @@
   </footer>
 
   <script src="scripts.js"></script>
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCtgKE7qG2tzSzKZNRiPv75iJbhAq9kuEM",
-  authDomain: "sonali-blog-fb45c.firebaseapp.com",
-  projectId: "sonali-blog-fb45c",
-  storageBucket: "sonali-blog-fb45c.firebasestorage.app",
-  messagingSenderId: "93112358664",
-  appId: "1:93112358664:web:18563c797efa403f5f3ebd",
-  measurementId: "G-NQ4QQQ8WWJ"
-};</body>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-storage-compat.js"></script>
+
+  <!-- Firebase Config + Logic -->
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCtgKE7qG2tzSzKZNRiPv75iJbhAq9kuEM",
+      authDomain: "sonali-blog-fb45c.firebaseapp.com",
+      projectId: "sonali-blog-fb45c",
+      storageBucket: "sonali-blog-fb45c.firebasestorage.app",
+      messagingSenderId: "93112358664",
+      appId: "1:93112358664:web:18563c797efa403f5f3ebd",
+      measurementId: "G-NQ4QQQ8WWJ"
+    };
+
+    // 🔥 Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+    const storage = firebase.storage();
+
+    // 🔒 Your UID (only you can post)
+    const ADMIN_UID = "Qlk1Jfcay1e31Fqay8dJU6tC96i1";
+
+    // ----- LOGIN -----
+    async function firebaseLogin() {
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+      try {
+        await auth.signInWithEmailAndPassword(email, password);
+        alert("Welcome, Sonali!");
+        onAuthChanged();
+      } catch (err) {
+        alert("Login failed: " + err.message);
+      }
+    }
+
+    function firebaseLogout() {
+      auth.signOut();
+    }
+
+    // ----- AUTH STATE -----
+    function onAuthChanged() {
+      auth.onAuthStateChanged(user => {
+        if (user && user.uid === ADMIN_UID) {
+          document.getElementById("editorSection").style.display = "block";
+          document.getElementById("loginSection").style.display = "none";
+        } else {
+          document.getElementById("editorSection").style.display = "none";
+          document.getElementById("loginSection").style.display = "block";
+        }
+      });
+    }
+    onAuthChanged();
+
+    // ----- ADD BLOG POST -----
+    async function addPost() {
+      const title = document.getElementById("titleInput").value;
+      const content = document.getElementById("contentInput").value;
+      const file = document.getElementById("imageInput").files[0];
+      let imageUrl = "";
+
+      if (file) {
+        const ref = storage.ref('images/' + Date.now() + '_' + file.name);
+        await ref.put(file);
+        imageUrl = await ref.getDownloadURL();
+      }
+
+      await db.collection("posts").add({
+        title,
+        content,
+        imageUrl,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        authorUID: auth.currentUser.uid
+      });
+
+      document.getElementById("titleInput").value = "";
+      document.getElementById("contentInput").value = "";
+      document.getElementById("imageInput").value = "";
+
+      loadPosts();
+    }
+
+    // ----- SHOW BLOG POSTS -----
+    async function loadPosts() {
+      const postsContainer = document.getElementById("posts");
+      postsContainer.innerHTML = "";
+      const qs = await db.collection("posts").orderBy("createdAt", "desc").get();
+      qs.forEach(doc => {
+        const p = doc.data();
+        const div = document.createElement("div");
+        div.className = "post";
+        div.innerHTML = `
+          <h2>${p.title}</h2>
+          <p>${p.content}</p>
+          ${p.imageUrl ? '<img src="'+p.imageUrl+'" style="max-width:100%;border-radius:10px;">' : ''}
+        `;
+        postsContainer.appendChild(div);
+      });
+    }
+
+    loadPosts();
+  </script>
+</body>
 </html>
