@@ -3,60 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery | Sonali Mohil</title>
+  <title>Sonali Mohil</title>
+
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand">Sonali Mohil</a>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="analysis.html">Analysis</a>
-        <a href="vlogs.html">Vlogs</a>
-        <a href="gallery.html" class="active">Gallery</a>
-        <a href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
 
-  <!-- Hero Banner -->
-  <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=2000&q=80');">
-    <div class="hero-overlay">
-      <div class="hero-inner">
-        <h1 class="hero-title">Where Mist Meets Light</h1>
-        <p class="hero-sub">Moments captured in silence — where nature speaks louder than words.</p>
-      </div>
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">Sonali Mohil</a>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="analysis.html">Analysis</a>
+      <a href="vlogs.html">Vlogs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="background-image: url('images/hero.jpg');">
+  <div class="hero-overlay">
+    <div class="hero-inner">
+      <h1 class="hero-title">Where Silence Becomes Form</h1>
+      <p class="hero-sub">Essays, images, and moments shaped by light.</p>
     </div>
+  </div>
+</section>
+
+<!-- HOME IMAGES -->
+<main class="container">
+  <section class="gallery-grid">
+    <img src="images/home1.jpg" class="gallery-img" alt="Morning mist">
+    <img src="images/home2.jpg" class="gallery-img" alt="Forest light">
+    <img src="images/home3.jpg" class="gallery-img" alt="Quiet road">
   </section>
+</main>
 
-  <!-- Gallery Content -->
-  <main class="container">
-    <section class="gallery-grid">
-      <img src="https://images.unsplash.com/photo-1523987355523-c7b5bda88d44?auto=format&fit=crop&w=1200&q=80" class="gallery-img">
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" class="gallery-img">
-      <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80" class="gallery-img">
-      <img src="https://images.unsplash.com/photo-1518831959642-7458a7dd0830?auto=format&fit=crop&w=1200&q=80" class="gallery-img">
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Sonali Mohil</p>
-      <div class="social">
-        <a href="https://instagram.com/sonalimohil" target="_blank">Instagram</a> •
-        <a href="mailto:mohilsonali@gmail.com">Email me</a>
-      </div>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span id="year"></span> Sonali Mohil</p>
+    <div class="social">
+      <a href="https://instagram.com/sonalimohil" target="_blank">Instagram</a> •
+      <a href="mailto:mohilsonali@gmail.com">Email me</a>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script>
-    document.getElementById("year").innerText = new Date().getFullYear();
-  </script>
+<script>
+  document.getElementById("year").innerText = new Date().getFullYear();
+</script>
 
 </body>
 </html>
