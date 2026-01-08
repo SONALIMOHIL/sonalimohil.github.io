@@ -26,7 +26,7 @@
 </header>
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('images-home/62FF466D-D989-462F-91A1-D50EB1DFC3F3.jpg');">
+<section class="hero" style="background-image: url('images-home/1.jpg');">
   <div class="hero-overlay">
     <div class="hero-inner">
       <h1>A Life in Motion</h1>
@@ -38,7 +38,7 @@
 <!-- MAIN -->
 <main class="container">
   <section class="home-vertical" id="gallery-section">
-    <!-- Images will be loaded automatically by JavaScript -->
+    <!-- Images will load automatically -->
   </section>
 </main>
 
@@ -54,33 +54,20 @@
 </footer>
 
 <script>
-  // Set current year in footer
+  // Insert current year in footer
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // List of all images in images-home folder
-  const images = [
-    "0B3E3D4D-6E31-46F2-935C-F205A366ADDD.jpg",
-    "0DF6AE0E-036A-4386-B7B7-50205143C989.jpg",
-    "23066D3A-A6C7-4D66-9076-DC1A1A3F11AD.jpg",
-    "244BF773-9459-4CF9-829A-A01006E404CA.jpg",
-    "2730B968-3703-4826-BE47-4D19ED92436C.jpg",
-    "387CE674-6F3F-4B5B-B413-04E8E2892352.jpg",
-    "4A5F409C-6C40-4E3C-8870-89CBF1872D40.jpg",
-    "51C7A5BC-13EC-4145-9090-4329B80335C2.jpg",
-    "62FF466D-D989-462F-91A1-D50EB1DFC3F3.jpg",
-    "6F1A3057-771C-4891-B751-37F3D23CA906.jpg"
-  ];
-
+  // Load all images 1.jpg to 10.jpg dynamically
   const gallerySection = document.getElementById("gallery-section");
+  const totalImages = 10; // we have 10 images
 
-  // Loop through images and create elements
-  images.forEach((filename, index) => {
+  for (let i = 1; i <= totalImages; i++) {
     const div = document.createElement("div");
     div.className = "home-image";
 
     const img = document.createElement("img");
-    img.src = `images-home/${filename}`;
-    img.alt = `Home image ${index + 1}`;
+    img.src = `images-home/${i}.jpg`;
+    img.alt = `Home image ${i}`;
 
     const p = document.createElement("p");
     p.className = "soft-quote";
@@ -89,7 +76,7 @@
     div.appendChild(img);
     div.appendChild(p);
     gallerySection.appendChild(div);
-  });
+  }
 </script>
 
 </body>
