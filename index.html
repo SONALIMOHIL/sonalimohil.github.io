@@ -7,8 +7,9 @@
 
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
-    /* HEADER */
+    /* HEADER FIXED AND HORIZONTAL */
     .site-header {
       background: #fff;
       box-shadow: 0 1px 4px rgba(0,0,0,0.1);
@@ -21,9 +22,9 @@
     .header-inner {
       max-width: 1200px;
       margin: 0 auto;
-      display: flex;
-      justify-content: space-between; /* Brand left, nav right */
-      align-items: center;
+      display: flex !important;
+      justify-content: space-between !important; /* Brand left, nav right */
+      align-items: center !important;
       padding: 0.5rem 1rem;
     }
 
@@ -35,10 +36,10 @@
       text-decoration: none;
     }
 
-    /* Nav - horizontal by default */
     .nav {
-      display: flex;
-      gap: 1rem;
+      display: flex !important;
+      flex-direction: row !important;
+      gap: 1rem !important;
     }
 
     .nav a {
@@ -54,17 +55,16 @@
       color: #007bff;
     }
 
-    /* Mobile: stack nav under brand */
     @media screen and (max-width: 600px) {
       .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column !important;
+        align-items: flex-start !important;
       }
       .nav {
-        width: 100%;
-        flex-direction: column;
-        gap: 0.4rem;
-        margin-top: 0.5rem;
+        width: 100% !important;
+        flex-direction: column !important;
+        gap: 0.4rem !important;
+        margin-top: 0.5rem !important;
       }
     }
 
@@ -167,7 +167,7 @@
 <!-- MAIN -->
 <main class="container">
   <section class="home-vertical" id="gallery-section">
-    <!-- Images + captions loaded by JS -->
+    <!-- Images + captions inserted by JS -->
   </section>
 </main>
 
@@ -181,10 +181,8 @@
 </footer>
 
 <script>
-  // Footer year
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Images in your folder
   const images = ["11.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"];
   const captions = [
     "Moments that shape me.",
