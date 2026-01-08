@@ -2,10 +2,11 @@
    ROOT + RESET
 ========================= */
 :root {
-  --bg: #f7f5f2;        /* Soft creamy background */
-  --text: #1c1c1a;      /* Dark primary text */
-  --accent: #5a7d61;    /* Gentle green accent */
-  --muted: #777777;     /* For quotes and captions */
+  --bg: #e6dfd3;        /* Soft beige background */
+  --text: #1c1c1a;      /* Dark text for readability */
+  --accent: #5a7d61;    /* Gentle green for links / buttons */
+  --muted: #777777;     /* For quotes */
+  --border-color: #c2b59b; /* Soft taupe for image & section borders */
   --shadow: rgba(0,0,0,0.05);
 }
 
@@ -42,6 +43,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
+  border-bottom: 2px solid var(--border-color); /* subtle header border */
 }
 
 .header-inner {
@@ -77,10 +79,11 @@ body {
 .hero {
   height: 90vh;
   background-size: cover;
-  background-position: center top; /* important for portraits */
+  background-position: center top; 
   border-radius: 10px;
   margin-bottom: 3rem;
   box-shadow: 0 6px 12px var(--shadow);
+  border: 2px solid var(--border-color); /* subtle border */
 }
 
 .hero-overlay {
@@ -112,7 +115,7 @@ body {
 .home-vertical {
   display: flex;
   flex-direction: column;
-  gap: 4rem;  /* balanced spacing between images */
+  gap: 4rem;
 }
 
 .image-block {
@@ -120,21 +123,26 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  border: 2px solid var(--border-color); /* border around each image block */
+  border-radius: 14px;
+  padding: 1rem;
+  background: #fdfaf4; /* very soft off-white inside the border */
 }
 
 .image-block img {
   width: 100%;
-  max-width: 800px;      /* optional max-width for large screens */
-  height: auto;           /* maintain natural aspect ratio */
-  object-fit: contain;    
-  object-position: top center; /* ensures face isn't cropped */
-  border-radius: 14px;    /* subtle rounding */
-  box-shadow: 0 6px 12px var(--shadow); /* soft elevation */
+  max-width: 800px;
+  height: auto;
+  object-fit: contain;
+  object-position: top center;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px var(--shadow);
   transition: transform 0.3s ease;
+  border: 1px solid var(--border-color); /* thin border around image */
 }
 
 .image-block img:hover {
-  transform: scale(1.02); /* subtle hover zoom */
+  transform: scale(1.02);
 }
 
 .soft-quote {
@@ -157,6 +165,7 @@ body {
   text-align: center;
   margin-top: 4rem;
   border-radius: 10px 10px 0 0;
+  border-top: 2px solid var(--border-color);
 }
 
 .site-footer a {
