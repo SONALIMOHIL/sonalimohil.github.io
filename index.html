@@ -26,61 +26,19 @@
 </header>
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('images-home/62FF466D-D989-462F-91A1-D50EB1DFC3F3.jpg');">
+<section class="hero">
   <div class="hero-overlay">
     <div class="hero-inner">
       <h1>A Life in Motion</h1>
-      <p>Built gently — with time, love, and support.</p>
+      <p>Growth, love, support, and positivity guide every step.</p>
     </div>
   </div>
 </section>
 
 <!-- MAIN -->
 <main class="container">
-  <section class="home-vertical">
-
-    <div class="home-image">
-      <img src="images-home/IMG_1316 2.jpeg" alt="">
-      <p class="soft-quote">
-        Growth is not loud. It happens quietly — when you choose yourself again and again.
-      </p>
-    </div>
-
-    <div class="home-image">
-      <img src="images-home/62FF466D-D989-462F-91A1-D50EB1DFC3F3.jpg" alt="">
-      <p class="soft-quote">
-        Some chapters are written with patience, others with courage. Both matter.
-      </p>
-    </div>
-
-    <div class="home-image">
-      <img src="images-home/51C7A5BC-13EC-4145-9090-4329B80335C2.heic" alt="">
-      <p class="soft-quote">
-        Love shows up in small ways — in listening, in staying, in believing.
-      </p>
-    </div>
-
-    <div class="home-image">
-      <img src="images-home/4A5F409C-6C40-4E3C-8870-89CBF1872D40.heic" alt="">
-      <p class="soft-quote">
-        Support is not fixing someone. It is standing beside them while they grow.
-      </p>
-    </div>
-
-    <div class="home-image">
-      <img src="images-home/387CE674-6F3F-4B5B-B413-04E8E2892352.heic" alt="">
-      <p class="soft-quote">
-        Healing is not linear. Progress counts even when it feels slow.
-      </p>
-    </div>
-
-    <div class="home-image">
-      <img src="images-home/2730B968-3703-4826-BE47-4D19ED92436C.heic" alt="">
-      <p class="soft-quote">
-        Becoming yourself is the most honest work you will ever do.
-      </p>
-    </div>
-
+  <section class="home-vertical" id="gallery-section">
+    <!-- Images will load here automatically -->
   </section>
 </main>
 
@@ -96,7 +54,38 @@
 </footer>
 
 <script>
+  // Set current year in footer
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Load all images from images-home dynamically
+  const gallerySection = document.getElementById("gallery-section");
+
+  // List all your image filenames here (after converting to jpg)
+  const images = [
+    "IMG_1316 2.jpg",
+    "62FF466D-D989-462F-91A1-D50EB1DFC3F3.jpg",
+    "51C7A5BC-13EC-4145-9090-4329B80335C2.jpg",
+    "4A5F409C-6C40-4E3C-8870-89CBF1872D40.jpg",
+    "387CE674-6F3F-4B5B-B413-04E8E2892352.jpg",
+    "2730B968-3703-4826-BE47-4D19ED92436C.jpg"
+  ];
+
+  images.forEach((filename, index) => {
+    const div = document.createElement("div");
+    div.className = "home-image";
+
+    const img = document.createElement("img");
+    img.src = `images-home/${filename}`;
+    img.alt = `Home image ${index + 1}`;
+
+    const p = document.createElement("p");
+    p.className = "soft-quote";
+    p.textContent = "Growth, love, support, and positivity fill every moment.";
+
+    div.appendChild(img);
+    div.appendChild(p);
+    gallerySection.appendChild(div);
+  });
 </script>
 
 </body>
