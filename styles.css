@@ -179,3 +179,20 @@ body {
 .social a:hover {
   color: var(--gold);
 }
+/* HOME VERTICAL LAYOUT */
+.home-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 4rem 0;
+}
+
+.home-vertical .home-image img {
+  width: 100%;
+  height: auto;                 /* KEEP ORIGINAL PROPORTION */
+  max-height: 90vh;             /* optional, prevents huge screens */
+  object-fit: contain;          /* NO CROP */
+  object-position: top center;  /* FACE VISIBLE */
+  border-radius: 14px;
+  background: #f0f0f0;
+}
