@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    /* Quick CSS fixes for image display */
+    /* Image gallery layout */
     .home-vertical {
       display: flex;
       flex-direction: column;
@@ -17,8 +17,9 @@
 
     .home-image img {
       width: 100%;
-      height: auto; /* fixes zoom/cropping issues */
-      object-fit: contain; /* ensures entire image shows */
+      height: auto;        /* fix zoom/crop issue */
+      max-height: 600px;   /* optional: control very tall images */
+      object-fit: contain;  /* ensure entire image shows */
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
@@ -73,7 +74,7 @@
 </header>
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('images-home/1.jpg');">
+<section class="hero" style="background-image: url('images-home/11.jpg');">
   <div class="hero-overlay">
     <div class="hero-inner">
       <h1>A Life in Motion</h1>
@@ -85,7 +86,7 @@
 <!-- MAIN -->
 <main class="container">
   <section class="home-vertical" id="gallery-section">
-    <!-- Images will load automatically -->
+    <!-- Images loaded automatically -->
   </section>
 </main>
 
@@ -101,20 +102,33 @@
 </footer>
 
 <script>
-  // Set current year
+  // Footer year
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Load all images 1.jpg to 10.jpg
-  const gallerySection = document.getElementById("gallery-section");
-  const totalImages = 10;
+  // List of images to display
+  const images = [
+    "11.jpg",   // first image on top
+    "2.jpg",
+    "3.jpg",
+    "4.jpg",
+    "5.jpg",
+    "6.jpg",
+    "7.jpg",
+    "8.jpg",
+    "9.jpg",
+    "10.jpg"
+    // note: 1.jpg is intentionally removed
+  ];
 
-  for (let i = 1; i <= totalImages; i++) {
+  const gallerySection = document.getElementById("gallery-section");
+
+  images.forEach((filename, index) => {
     const div = document.createElement("div");
     div.className = "home-image";
 
     const img = document.createElement("img");
-    img.src = `images-home/${i}.jpg`;
-    img.alt = `Home image ${i}`;
+    img.src = `images-home/${filename}`;
+    img.alt = `Home image ${index + 1}`;
 
     const p = document.createElement("p");
     p.className = "soft-quote";
@@ -123,7 +137,7 @@
     div.appendChild(img);
     div.appendChild(p);
     gallerySection.appendChild(div);
-  }
+  });
 </script>
 
 </body>
