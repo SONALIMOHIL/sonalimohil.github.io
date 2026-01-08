@@ -299,5 +299,12 @@ body {
   text-align: center;
   margin: 4rem 0;
 }
+/* HOME IMAGE CONTROL */
+.gallery-grid img {
+  width: 100%;
+  max-height: 80vh;        /* key line */
+  object-fit: cover;      /* prevents distortion */
+  border-radius: 12px;
+}
 
 
