@@ -6,7 +6,7 @@
   --text: #1c1c1a;        /* Dark text for readability */
   --accent: #5a7d61;      /* Gentle green for links/buttons */
   --muted: #6d6d6d;       /* For quotes */
-  --border-color: #d1c4b3; /* Soft taupe for image & section borders */
+  --border-color: #d1c4b3; /* Soft taupe for borders */
   --shadow: rgba(0,0,0,0.08);
 }
 
@@ -31,8 +31,7 @@ body {
   width: 90%;
   max-width: 1100px;
   margin: auto;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 2rem 0;
 }
 
 /* =========================
@@ -116,45 +115,39 @@ body {
 .home-vertical {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 3rem;
 }
 
-/* Image container that wraps each image + quote */
+/* Each image container */
 .home-image {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  background: #fdfaf4; /* soft card-like background */
+  background: #fdfaf4; /* soft card background */
   padding: 1rem;
   border-radius: 14px;
   border: 2px solid var(--border-color);
   box-shadow: 0 6px 12px var(--shadow);
 }
 
-/* Make images fully visible without cropping */
+/* Image itself */
 .home-image img {
-  width: 100%;
-  max-width: 900px;
-  height: auto;
-  object-fit: contain;
-  object-position: top center;
+  width: 100%;       /* fill container width */
+  max-width: 900px;  /* limit max width */
+  height: auto;      /* maintain natural aspect ratio */
+  display: block;
   border-radius: 12px;
-  transition: transform 0.3s ease;
   border: 1px solid var(--border-color);
 }
 
-.home-image img:hover {
-  transform: scale(1.02);
-}
-
-/* Quote styling */
+/* Quote under image */
 .soft-quote {
   font-family: 'Playfair Display', serif;
   font-style: italic;
   font-size: 1.3rem;
   color: var(--muted);
-  max-width: 700px;
+  max-width: 750px;
   text-align: center;
   line-height: 1.6;
   margin: 0 auto;
