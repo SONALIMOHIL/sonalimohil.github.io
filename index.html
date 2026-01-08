@@ -8,27 +8,29 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    /* HEADER + NAV */
+    /* HEADER */
     .site-header {
       background: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 1000;
+      width: 100%;
     }
 
     .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem;
-      flex-wrap: wrap;
+      padding: 0.5rem 1rem; /* slim height */
     }
 
     .brand {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       color: #333;
       text-decoration: none;
     }
@@ -36,35 +38,35 @@
     .nav {
       display: flex;
       gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap; /* ensures wrapping on small screens */
-      margin-top: 0.5rem;
     }
 
     .nav a {
       text-decoration: none;
       color: #333;
       font-weight: 500;
-      padding: 0.5rem 1rem;
+      padding: 0.4rem 0.6rem;
       transition: color 0.2s;
     }
 
-    .nav a.active,
-    .nav a:hover {
+    .nav a.active, .nav a:hover {
       color: #007bff;
     }
 
-    /* Mobile-friendly: stack links on small screens */
+    /* Mobile nav */
     @media screen and (max-width: 600px) {
-      .nav {
+      .header-inner {
         flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
+        align-items: flex-start;
+      }
+      .nav {
+        width: 100%;
+        flex-direction: column;
+        gap: 0.4rem;
         margin-top: 0.5rem;
       }
     }
 
-    /* Hero */
+    /* HERO */
     .hero {
       height: 60vh;
       display: flex;
@@ -87,21 +89,24 @@
     .hero-inner h1, .hero-inner p {
       color: #fff;
       text-align: center;
+      margin: 0.2rem 0;
     }
 
-    /* Gallery layout */
+    /* GALLERY */
     .home-vertical {
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      padding: 2rem 0;
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .home-image img {
       width: 100%;
       height: auto;
       max-height: 600px;
-      object-fit: contain; /* ensures full image shows */
+      object-fit: contain;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
@@ -114,7 +119,7 @@
       font-size: 1rem;
     }
 
-    /* Footer */
+    /* FOOTER */
     .site-footer {
       background: #f8f8f8;
       padding: 1.5rem 0;
@@ -135,7 +140,7 @@
 
 <!-- HEADER -->
 <header class="site-header">
-  <div class="container header-inner">
+  <div class="header-inner">
     <a href="index.html" class="brand">Sonali Mohil</a>
     <nav class="nav">
       <a href="index.html" class="active">Home</a>
@@ -160,32 +165,23 @@
 <!-- MAIN -->
 <main class="container">
   <section class="home-vertical" id="gallery-section">
-    <!-- Images loaded automatically -->
+    <!-- Images + captions loaded by JS -->
   </section>
 </main>
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <p>© <span id="year"></span> Sonali Mohil</p>
-    <div class="social">
-      <a href="https://instagram.com/sonalimohil" target="_blank">Instagram</a> ·
-      <a href="mailto:mohilsonali@gmail.com">Email</a>
-    </div>
+  <p>© <span id="year"></span> Sonali Mohil</p>
+  <div class="social">
+    <a href="https://instagram.com/sonalimohil" target="_blank">Instagram</a> ·
+    <a href="mailto:mohilsonali@gmail.com">Email</a>
   </div>
 </footer>
 
 <script>
-  // Footer year
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Images in your folder
-  const images = [
-    "11.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg",
-    "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"
-  ];
-
-  // Captions
+  const images = ["11.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"];
   const captions = [
     "Moments that shape me.",
     "Living with intention.",
