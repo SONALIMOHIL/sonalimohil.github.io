@@ -1,12 +1,9 @@
-/* =========================
-   ROOT + RESET
-========================= */
 :root {
-  --bg: #f5efe6;          /* Soft warm beige background */
-  --text: #1c1c1a;        /* Dark text for readability */
-  --accent: #5a7d61;      /* Gentle green for links/buttons */
-  --muted: #6d6d6d;       /* For quotes */
-  --border-color: #d1c4b3; /* Soft taupe for borders */
+  --bg: #f5efe6;          /* Beige background */
+  --text: #1c1c1a;
+  --accent: #5a7d61;
+  --muted: #6d6d6d;
+  --border-color: #d1c4b3;
   --shadow: rgba(0,0,0,0.08);
 }
 
@@ -21,12 +18,9 @@ body {
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.7;
-  scroll-behavior: smooth;
 }
 
-/* =========================
-   CONTAINER
-========================= */
+/* CONTAINER */
 .container {
   width: 90%;
   max-width: 1100px;
@@ -34,15 +28,12 @@ body {
   padding: 2rem 0;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 .site-header {
   background: var(--bg);
   box-shadow: 0 1px 4px var(--shadow);
   position: sticky;
   top: 0;
-  z-index: 50;
   border-bottom: 2px solid var(--border-color);
 }
 
@@ -73,9 +64,7 @@ body {
   color: var(--accent);
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 .hero {
   height: 80vh;
   background-size: cover;
@@ -109,39 +98,34 @@ body {
   margin-top: 0.8rem;
 }
 
-/* =========================
-   HOME IMAGES + QUOTES
-========================= */
+/* HOME IMAGES + QUOTES */
 .home-vertical {
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
 
-/* Each image container */
 .home-image {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  background: #fdfaf4; /* soft card background */
+  background: #fdfaf4;
   padding: 1rem;
   border-radius: 14px;
   border: 2px solid var(--border-color);
   box-shadow: 0 6px 12px var(--shadow);
 }
 
-/* Image itself */
 .home-image img {
-  width: 100%;       /* fill container width */
-  max-width: 900px;  /* limit max width */
-  height: auto;      /* maintain natural aspect ratio */
+  width: 100%;
+  max-width: 900px;
+  height: auto;
   display: block;
   border-radius: 12px;
   border: 1px solid var(--border-color);
 }
 
-/* Quote under image */
 .soft-quote {
   font-family: 'Playfair Display', serif;
   font-style: italic;
@@ -153,9 +137,7 @@ body {
   margin: 0 auto;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 .site-footer {
   background: var(--accent);
   color: #fff;
@@ -176,21 +158,10 @@ body {
   color: var(--bg);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.2rem;
-  }
-  .hero-sub {
-    font-size: 1rem;
-  }
-  .soft-quote {
-    font-size: 1.1rem;
-    padding: 0 1rem;
-  }
-  .home-image img {
-    max-width: 100%;
-  }
+  .hero-title { font-size: 2.2rem; }
+  .hero-sub { font-size: 1rem; }
+  .soft-quote { font-size: 1.1rem; padding: 0 1rem; }
+  .home-image img { max-width: 100%; }
 }
