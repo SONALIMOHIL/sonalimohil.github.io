@@ -7,6 +7,53 @@
 
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Quick CSS fixes for image display */
+    .home-vertical {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .home-image img {
+      width: 100%;
+      height: auto; /* fixes zoom/cropping issues */
+      object-fit: contain; /* ensures entire image shows */
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .soft-quote {
+      margin-top: 0.5rem;
+      font-style: italic;
+      text-align: center;
+      color: #555;
+    }
+
+    .hero {
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .hero-overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-inner h1, .hero-inner p {
+      color: #fff;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
@@ -54,12 +101,12 @@
 </footer>
 
 <script>
-  // Insert current year in footer
+  // Set current year
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Load all images 1.jpg to 10.jpg dynamically
+  // Load all images 1.jpg to 10.jpg
   const gallerySection = document.getElementById("gallery-section");
-  const totalImages = 10; // we have 10 images
+  const totalImages = 10;
 
   for (let i = 1; i <= totalImages; i++) {
     const div = document.createElement("div");
