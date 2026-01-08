@@ -1,143 +1,221 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonali Mohil</title>
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f7f6f4;
-  color: #222;
-  line-height: 1.7;
-}
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-/* CONTAINER */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 0 20px;
-}
+  <style>
+    /* HEADER FIXED AND HORIZONTAL */
+    .site-header {
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
 
-/* HEADER */
-.site-header {
-  position: sticky;
-  top: 0;
-  background: rgba(247,246,244,0.95);
-  border-bottom: 1px solid #e2e2e2;
-  z-index: 100;
-}
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex !important;
+      justify-content: space-between !important; /* Brand left, nav right */
+      align-items: center !important;
+      padding: 0.5rem 1rem;
+    }
 
-.header-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 0;
-}
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #333;
+      text-decoration: none;
+    }
 
-.brand {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  text-decoration: none;
-  color: #000;
-}
+    .nav {
+      display: flex !important;
+      flex-direction: row !important;
+      gap: 1rem !important;
+    }
 
-.nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #444;
-  font-size: 0.9rem;
-}
+    .nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 0.4rem 0.6rem;
+      transition: color 0.2s;
+    }
 
-.nav a.active,
-.nav a:hover {
-  color: #000;
-}
+    .nav a.active,
+    .nav a:hover {
+      color: #007bff;
+    }
 
-/* HERO */
-.hero {
-  height: 85vh;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
+    @media screen and (max-width: 600px) {
+      .header-inner {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+      .nav {
+        width: 100% !important;
+        flex-direction: column !important;
+        gap: 0.4rem !important;
+        margin-top: 0.5rem !important;
+      }
+    }
 
-.hero-overlay {
-  background: rgba(0,0,0,0.35);
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+    /* HERO */
+    .hero {
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
 
-.hero-inner {
-  text-align: center;
-  color: #fff;
-  padding: 0 20px;
-}
+    .hero-overlay {
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-.hero-inner h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 3.2rem;
-}
+    .hero-inner h1, .hero-inner p {
+      color: #fff;
+      text-align: center;
+      margin: 0.2rem 0;
+    }
 
-.hero-inner p {
-  margin-top: 12px;
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
+    /* GALLERY */
+    .home-vertical {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-/* HOME VERTICAL */
-.home-vertical {
-  margin: 80px 0;
-}
+    .home-image img {
+      width: 100%;
+      height: auto;
+      max-height: 600px;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
 
-.home-image {
-  margin-bottom: 90px;
-  text-align: center;
-}
+    .soft-quote {
+      margin-top: 0.5rem;
+      font-style: italic;
+      text-align: center;
+      color: #555;
+      font-size: 1rem;
+    }
 
-.home-image img {
-  width: 100%;
-  max-height: 650px;
-  object-fit: cover;
-  border-radius: 14px;
-}
+    /* FOOTER */
+    .site-footer {
+      background: #f8f8f8;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
 
-.soft-quote {
-  margin-top: 24px;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.15rem;
-  color: #555;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
+    .social a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 0.3rem;
+    }
+  </style>
+</head>
 
-/* FOOTER */
-.site-footer {
-  border-top: 1px solid #e2e2e2;
-  padding: 40px 0;
-  text-align: center;
-  font-size: 0.85rem;
-  color: #666;
-}
+<body>
 
-.site-footer a {
-  color: #444;
-  text-decoration: none;
-}
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">Sonali Mohil</a>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="analysis.html">Analysis</a>
+      <a href="vlogs.html">Vlogs</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
 
-.site-footer a:hover {
-  text-decoration: underline;
-}
+<!-- HERO -->
+<section class="hero" style="background-image: url('images-home/11.jpg');">
+  <div class="hero-overlay">
+    <div class="hero-inner">
+      <h1>A Life in Motion</h1>
+      <p>Growth, love, support, and positivity guide every step.</p>
+    </div>
+  </div>
+</section>
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .hero-inner h1 {
-    font-size: 2.4rem;
-  }
+<!-- MAIN -->
+<main class="container">
+  <section class="home-vertical" id="gallery-section">
+    <!-- Images + captions inserted by JS -->
+  </section>
+</main>
 
-  .nav {
-    display: none;
-  }
-}
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>© <span id="year"></span> Sonali Mohil</p>
+  <div class="social">
+    <a href="https://instagram.com/sonalimohil" target="_blank">Instagram</a> ·
+    <a href="mailto:mohilsonali@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const images = ["11.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg"];
+  const captions = [
+    "Moments that shape me.",
+    "Living with intention.",
+    "Collecting joy, not perfection.",
+    "Growth in every direction.",
+    "Soft strength, steady steps.",
+    "Open heart, clear mind.",
+    "Present isn’t passive. It’s power.",
+    "Every place taught something.",
+    "Calm in motion.",
+    "A life unfolding, not just passing."
+  ];
+
+  const gallerySection = document.getElementById("gallery-section");
+
+  images.forEach((filename, index) => {
+    const div = document.createElement("div");
+    div.className = "home-image";
+
+    const img = document.createElement("img");
+    img.src = `images-home/${filename}`;
+    img.alt = captions[index];
+
+    const p = document.createElement("p");
+    p.className = "soft-quote";
+    p.textContent = captions[index];
+
+    div.appendChild(img);
+    div.appendChild(p);
+    gallerySection.appendChild(div);
+  });
+</script>
+
+</body>
+</html>
