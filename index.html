@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -17,9 +17,9 @@
 
     .home-image img {
       width: 100%;
-      height: auto;        /* ensures full image displays */
-      max-height: 600px;   /* optional: controls very tall images */
-      object-fit: contain;  /* prevents cropping / zooming */
+      height: auto;
+      max-height: 600px;
+      object-fit: contain; /* ensures full image shows */
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
@@ -29,6 +29,7 @@
       font-style: italic;
       text-align: center;
       color: #555;
+      font-size: 1rem;
     }
 
     .hero {
@@ -86,7 +87,7 @@
 <!-- MAIN -->
 <main class="container">
   <section class="home-vertical" id="gallery-section">
-    <!-- Images will load automatically -->
+    <!-- Images loaded automatically -->
   </section>
 </main>
 
@@ -105,9 +106,9 @@
   // Footer year
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Gallery images (1.jpg is removed, 11.jpg first)
+  // Image filenames in order (ignore numbers, use actual jpg names in folder)
   const images = [
-    "11.jpg",   // first image
+    "11.jpg",
     "2.jpg",
     "3.jpg",
     "4.jpg",
@@ -119,6 +120,20 @@
     "10.jpg"
   ];
 
+  // Captions for each image
+  const captions = [
+    "Moments that shape me.",
+    "Living with intention.",
+    "Collecting joy, not perfection.",
+    "Growth in every direction.",
+    "Soft strength, steady steps.",
+    "Open heart, clear mind.",
+    "Present isn’t passive. It’s power.",
+    "Every place taught something.",
+    "Calm in motion.",
+    "A life unfolding, not just passing."
+  ];
+
   const gallerySection = document.getElementById("gallery-section");
 
   images.forEach((filename, index) => {
@@ -127,11 +142,11 @@
 
     const img = document.createElement("img");
     img.src = `images-home/${filename}`;
-    img.alt = `Home image ${index + 1}`;
+    img.alt = captions[index];
 
     const p = document.createElement("p");
     p.className = "soft-quote";
-    p.textContent = "Growth, love, support, and positivity fill every moment.";
+    p.textContent = captions[index];
 
     div.appendChild(img);
     div.appendChild(p);
