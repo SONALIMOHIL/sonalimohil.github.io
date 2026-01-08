@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    /* Image gallery layout */
+    /* Gallery layout */
     .home-vertical {
       display: flex;
       flex-direction: column;
@@ -17,9 +17,9 @@
 
     .home-image img {
       width: 100%;
-      height: auto;        /* fix zoom/crop issue */
-      max-height: 600px;   /* optional: control very tall images */
-      object-fit: contain;  /* ensure entire image shows */
+      height: auto;        /* ensures full image displays */
+      max-height: 600px;   /* optional: controls very tall images */
+      object-fit: contain;  /* prevents cropping / zooming */
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
@@ -86,7 +86,7 @@
 <!-- MAIN -->
 <main class="container">
   <section class="home-vertical" id="gallery-section">
-    <!-- Images loaded automatically -->
+    <!-- Images will load automatically -->
   </section>
 </main>
 
@@ -105,9 +105,9 @@
   // Footer year
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // List of images to display
+  // Gallery images (1.jpg is removed, 11.jpg first)
   const images = [
-    "11.jpg",   // first image on top
+    "11.jpg",   // first image
     "2.jpg",
     "3.jpg",
     "4.jpg",
@@ -117,7 +117,6 @@
     "8.jpg",
     "9.jpg",
     "10.jpg"
-    // note: 1.jpg is intentionally removed
   ];
 
   const gallerySection = document.getElementById("gallery-section");
