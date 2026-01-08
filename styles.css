@@ -283,3 +283,21 @@ body {
   line-height: 1.6;
 }
 
+.quote-section {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.soft-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #555;
+  line-height: 1.6;
+}
+.quote-section {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+
