@@ -1,16 +1,13 @@
-body {
-  background-color: pink !important;
-}
 /* =========================
    ROOT + RESET
 ========================= */
 :root {
-  --bg: #e6dfd3;        /* Soft beige background */
-  --text: #1c1c1a;      /* Dark text for readability */
-  --accent: #5a7d61;    /* Gentle green for links / buttons */
-  --muted: #777777;     /* For quotes */
-  --border-color: #c2b59b; /* Soft taupe for image & section borders */
-  --shadow: rgba(0,0,0,0.05);
+  --bg: #f5efe6;          /* Soft warm beige background */
+  --text: #1c1c1a;        /* Dark text for readability */
+  --accent: #5a7d61;      /* Gentle green for links/buttons */
+  --muted: #6d6d6d;       /* For quotes */
+  --border-color: #d1c4b3; /* Soft taupe for image & section borders */
+  --shadow: rgba(0,0,0,0.08);
 }
 
 * {
@@ -24,6 +21,7 @@ body {
   background-color: var(--bg);
   color: var(--text);
   line-height: 1.7;
+  scroll-behavior: smooth;
 }
 
 /* =========================
@@ -46,7 +44,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 50;
-  border-bottom: 2px solid var(--border-color); /* subtle header border */
+  border-bottom: 2px solid var(--border-color);
 }
 
 .header-inner {
@@ -80,13 +78,13 @@ body {
    HERO
 ========================= */
 .hero {
-  height: 90vh;
+  height: 80vh;
   background-size: cover;
-  background-position: center top; 
-  border-radius: 10px;
+  background-position: center;
+  border-radius: 14px;
   margin-bottom: 3rem;
   box-shadow: 0 6px 12px var(--shadow);
-  border: 2px solid var(--border-color); /* subtle border */
+  border: 2px solid var(--border-color);
 }
 
 .hero-overlay {
@@ -121,33 +119,36 @@ body {
   gap: 4rem;
 }
 
-.image-block {
+/* Image container that wraps each image + quote */
+.home-image {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  border: 2px solid var(--border-color); /* border around each image block */
-  border-radius: 14px;
+  background: #fdfaf4; /* soft card-like background */
   padding: 1rem;
-  background: #fdfaf4; /* very soft off-white inside the border */
+  border-radius: 14px;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 6px 12px var(--shadow);
 }
 
-.image-block img {
+/* Make images fully visible without cropping */
+.home-image img {
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   height: auto;
   object-fit: contain;
   object-position: top center;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px var(--shadow);
+  border-radius: 12px;
   transition: transform 0.3s ease;
-  border: 1px solid var(--border-color); /* thin border around image */
+  border: 1px solid var(--border-color);
 }
 
-.image-block img:hover {
+.home-image img:hover {
   transform: scale(1.02);
 }
 
+/* Quote styling */
 .soft-quote {
   font-family: 'Playfair Display', serif;
   font-style: italic;
@@ -156,6 +157,7 @@ body {
   max-width: 700px;
   text-align: center;
   line-height: 1.6;
+  margin: 0 auto;
 }
 
 /* =========================
@@ -195,7 +197,7 @@ body {
     font-size: 1.1rem;
     padding: 0 1rem;
   }
-  .image-block img {
+  .home-image img {
     max-width: 100%;
   }
 }
