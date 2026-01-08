@@ -74,7 +74,7 @@ body {
 .hero {
   height: 90vh;
   background-size: cover;
-  background-position: center;
+  background-position: center top; /* FACE SAFE */
 }
 
 .hero-overlay {
@@ -98,7 +98,7 @@ body {
 }
 
 /* =========================
-   HOME IMAGES (NO CROP)
+   HOME IMAGES (PORTRAIT SAFE)
 ========================= */
 .home-grid {
   display: grid;
@@ -109,46 +109,48 @@ body {
 
 .home-grid img {
   width: 100%;
-  height: auto;          /* MOST IMPORTANT LINE */
-  max-height: 85vh;      /* never taller than screen */
-  object-fit: contain;   /* show full image */
+  height: auto;                 /* DO NOT FORCE HEIGHT */
+  max-height: 85vh;             /* NEVER TALLER THAN SCREEN */
+  object-fit: contain;          /* NO CROP */
+  object-position: top center;  /* ⭐ FIXES FOREHEAD CUT */
   border-radius: 14px;
   background: #f0f0f0;
 }
 
 /* =========================
-   QUOTES (FEMININE / EDITORIAL)
+   QUOTES (EDITORIAL / FEMININE)
 ========================= */
 .quote-section {
   grid-column: 1 / -1;
   text-align: center;
-  margin: 2rem 0;
+  margin: 2.5rem 0;
 }
 
 .soft-quote {
   font-family: "Playfair Display", serif;
   font-style: italic;
-  font-size: 1.4rem;
+  font-size: 1.45rem;
   color: #555;
-  max-width: 700px;
+  max-width: 720px;
   margin: auto;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* =========================
-   GALLERY PAGE (CROPPED)
+   GALLERY PAGE (INTENTIONAL CROP)
 ========================= */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.2rem;
+  gap: 1.4rem;
   margin: 4rem 0;
 }
 
 .gallery-grid img {
   width: 100%;
   height: 260px;
-  object-fit: cover;     /* intentional crop */
+  object-fit: cover;             /* CROPPING IS OK HERE */
+  object-position: center top;   /* FACE-FIRST CROP */
   border-radius: 12px;
   transition: transform 0.4s ease;
 }
