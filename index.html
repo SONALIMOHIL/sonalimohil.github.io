@@ -8,30 +8,63 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    /* Gallery layout */
-    .home-vertical {
+    /* HEADER + NAV */
+    .site-header {
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-inner {
       display: flex;
-      flex-direction: column;
-      gap: 2rem;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      flex-wrap: wrap;
     }
 
-    .home-image img {
-      width: 100%;
-      height: auto;
-      max-height: 600px;
-      object-fit: contain; /* ensures full image shows */
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #333;
+      text-decoration: none;
     }
 
-    .soft-quote {
+    .nav {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap; /* ensures wrapping on small screens */
       margin-top: 0.5rem;
-      font-style: italic;
-      text-align: center;
-      color: #555;
-      font-size: 1rem;
     }
 
+    .nav a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      transition: color 0.2s;
+    }
+
+    .nav a.active,
+    .nav a:hover {
+      color: #007bff;
+    }
+
+    /* Mobile-friendly: stack links on small screens */
+    @media screen and (max-width: 600px) {
+      .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+      }
+    }
+
+    /* Hero */
     .hero {
       height: 60vh;
       display: flex;
@@ -54,6 +87,46 @@
     .hero-inner h1, .hero-inner p {
       color: #fff;
       text-align: center;
+    }
+
+    /* Gallery layout */
+    .home-vertical {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+
+    .home-image img {
+      width: 100%;
+      height: auto;
+      max-height: 600px;
+      object-fit: contain; /* ensures full image shows */
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .soft-quote {
+      margin-top: 0.5rem;
+      font-style: italic;
+      text-align: center;
+      color: #555;
+      font-size: 1rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: #f8f8f8;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .social a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 0.3rem;
     }
   </style>
 </head>
@@ -106,21 +179,13 @@
   // Footer year
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Image filenames in order (ignore numbers, use actual jpg names in folder)
+  // Images in your folder
   const images = [
-    "11.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg",
-    "8.jpg",
-    "9.jpg",
-    "10.jpg"
+    "11.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg",
+    "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"
   ];
 
-  // Captions for each image
+  // Captions
   const captions = [
     "Moments that shape me.",
     "Living with intention.",
