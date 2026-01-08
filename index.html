@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* HEADER FIXED AND HORIZONTAL */
+    /* HEADER */
     .site-header {
       background: #fff;
       box-shadow: 0 1px 4px rgba(0,0,0,0.1);
@@ -23,7 +23,7 @@
       max-width: 1200px;
       margin: 0 auto;
       display: flex !important;
-      justify-content: space-between !important; /* Brand left, nav right */
+      justify-content: space-between !important;
       align-items: center !important;
       padding: 0.5rem 1rem;
     }
@@ -55,15 +55,14 @@
       color: #007bff;
     }
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 768px) {
       .header-inner {
         flex-direction: column !important;
         align-items: flex-start !important;
       }
       .nav {
-        width: 100% !important;
         flex-direction: column !important;
-        gap: 0.4rem !important;
+        width: 100% !important;
         margin-top: 0.5rem !important;
       }
     }
@@ -108,7 +107,7 @@
       width: 100%;
       height: auto;
       max-height: 600px;
-      object-fit: contain;
+      object-fit: contain; /* fixes zoom for 6.jpg */
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
@@ -164,10 +163,10 @@
   </div>
 </section>
 
-<!-- MAIN -->
+<!-- MAIN GALLERY -->
 <main class="container">
   <section class="home-vertical" id="gallery-section">
-    <!-- Images + captions inserted by JS -->
+    <!-- Images + captions will be inserted by JS -->
   </section>
 </main>
 
