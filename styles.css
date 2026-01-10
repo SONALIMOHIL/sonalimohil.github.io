@@ -125,3 +125,44 @@
   text-decoration: none;
   margin: 0 0.3rem;
 }
+
+/* Scroll reveal base */
+.card,
+.text-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+/* When revealed */
+.card.reveal,
+.text-card.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Luxury color accents */
+:root {
+  --ink: #1a1a1a;
+  --muted: #7a7a7a;
+  --linen: #f6f5f3;
+  --gold: #b89b5e;
+}
+
+/* Caption typography refinement */
+.caption strong {
+  color: #fff;
+  letter-spacing: 0.4px;
+}
+
+.caption span {
+  color: rgba(255,255,255,0.85);
+}
+
+/* Text cards feel like print */
+.text-card {
+  background: var(--linen);
+  color: var(--ink);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
